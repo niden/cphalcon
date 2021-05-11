@@ -45,7 +45,7 @@ jobs:
           ini-values: apc.enable_cli=on, session.save_path=/tmp, extension=psr.so, extension=phalcon.so
           tools: pecl
           env:
-            GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
+            GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg --with-freetype
             GD_LIBS: libgd-dev libjpeg-dev
             GD_PATH: ext/gd
 
