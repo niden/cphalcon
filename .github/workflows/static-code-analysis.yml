@@ -44,10 +44,10 @@ jobs:
           extensions: mbstring, intl, json, imagick, gd-php/php-src@PHP-${{ matrix.php }}, gettext, igbinary, apcu, msgpack, memcached, yaml, redis
           ini-values: apc.enable_cli=on, session.save_path=/tmp, extension=psr.so, extension=phalcon.so
           tools: pecl
-          env:
-            GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg --with-freetype
-            GD_LIBS: libgd-dev libjpeg-dev
-            GD_PATH: ext/gd
+        env:
+          GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg --with-freetype
+          GD_LIBS: libgd-dev libjpeg-dev
+          GD_PATH: ext/gd
 
       - name: Install System Dependencies
         run: |
