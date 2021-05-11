@@ -41,8 +41,13 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, intl, json, imagick, gd-php/php-src@PHP-${{ matrix.php }}, gettext, igbinary, apcu, msgpack, memcached, yaml, redis
+          ini-values: apc.enable_cli=on, session.save_path=/tmp, extension=psr.so, extension=phalcon.so
           tools: pecl
-          extensions: mbstring, intl, json, imagick, redis, igbinary, apcu, msgpack, memcached, yaml, psr
+          env:
+            GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
+            GD_LIBS: libgd-dev libjpeg-dev
+            GD_PATH: ext/gd
 
       - name: Install System Dependencies
         run: |
