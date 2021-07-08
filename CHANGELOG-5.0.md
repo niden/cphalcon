@@ -1,7 +1,10 @@
 # [5.0.0alpha4](https://github.com/phalcon/cphalcon/releases/tag/v5.0.0alpha4) (xxx-xx-xx)
 
 ## Changed
+- Changed `Phalcon\Loader` to `Phalcon\Autoload\Loader`; its own namespace [#15489](https://github.com/phalcon/cphalcon/issues/15489)
 
+## Fixed
+- Fixed `Phalcon\Loader` by changing the `require` statements to `require_once` so as not to interfere with other loader components [#15489](https://github.com/phalcon/cphalcon/issues/15489)
 
 # [5.0.0alpha3](https://github.com/phalcon/cphalcon/releases/tag/v5.0.0alpha3) (2021-06-30)
 
